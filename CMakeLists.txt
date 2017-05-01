@@ -37,7 +37,7 @@ add_executable(
 # link googletest
 target_link_libraries(
 	tests
-	${googletest}
+	gtest
 	)
 
 
