@@ -1,0 +1,12 @@
+# vim swp
+*.swp
+*.swo
+
+# Cmake files
+CMakeCache.txt
+CMakeFiles
+Makefile
+cmake_install.cmake
+
+# Build dir
+build
