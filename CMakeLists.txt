@@ -19,6 +19,7 @@ file(GLOB_RECURSE test_sources tests/*.cpp)
 # add include directories
 include_directories(
 	vendor/googletest/googletest/include/
+	src
 	)
 
 # googletest
