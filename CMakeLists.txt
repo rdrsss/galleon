@@ -14,6 +14,7 @@ set(CMAKE_CXX_FLAGS "--std=c++11 -g -Wall")
 
 # Collect sources
 file(GLOB_RECURSE test_sources tests/*.cpp)
+file(GLOB_RECURSE lib_sources src/*.cpp)
 #file(glob_recurse test_headers tests/*.h)
 
 # add include directories
@@ -33,6 +34,7 @@ add_subdirectory(
 add_executable(
 	tests
 	${test_sources}
+	${lib_sources}
 	)
 
 # link googletest

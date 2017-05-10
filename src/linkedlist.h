@@ -9,8 +9,10 @@ namespace hepp {
 template<typename T>
 class linked_list {
 public:
-	template<typename T>
 	struct node {
+		node() : next_(nullptr), prev_(nullptr) {}
+
+
 		T value_;
 
 		node* next_;
@@ -18,11 +20,30 @@ public:
 	};
 
 
+	struct iterator {
+		node* ptr_;
+	};
+
+	linked_list() : count_(0) {}
+	linked_list(const linked_list& rhs) {}
+	linked_list(const linked_list&& rhs) {}
+
+	~linked_list() {}
+
+
 	void add_front(const T& v);
-	void add_front(const node<T> &node);
+	void add_front(const node &n);
 
 	void add_back(const T& v);
-	void add_back(const node<T> &node);
+	void add_back(const node &n);
+
+	int count() const { return count_; }
+
+private:
+	node begin_;
+	node end_;
+	
+	int count_;
 
 };
 
