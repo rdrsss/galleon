@@ -8,7 +8,6 @@ namespace hepp {
 
 template<typename T>
 class linked_list {
-public:
 	struct node {
 		node() : next_(nullptr), prev_(nullptr) {}
 		node(const T& v) : node() { value_ = v; }
@@ -19,7 +18,7 @@ public:
 		node* prev_;
 	};
 
-
+public:
 	struct iterator {
 		node* ptr_;
 	};
@@ -34,26 +33,25 @@ public:
 
 
 	void add_front(const T& v);
-	void add_node_front(node* const n);
-
 	void add_back(const T& v);
-	void add_node_back(const node &n);
 
 	int count() const { return count_; }
 
 private:
+	void add_node_front(node* const n);
+	void add_node_back(node* const n);
+
 	node begin_;
 	node end_;
 	
 	int count_;
-
 };
 
 
 template<typename T>
 void linked_list<T>::add_front(const T& v) {
 	// Create new node
-	auto n = new node(v);
+	const auto n = new node(v);
 	++count_;
 	// Add to front of list
 	add_node_front(n);
@@ -76,7 +74,7 @@ void linked_list<T>::add_node_front(node* const n) {
 template<typename T>
 void linked_list<T>::add_back(const T& v) {
 	// Create new node
-	auto n = new node { v, nullptr, nullptr };
+	const auto n = new node { v, nullptr, nullptr };
 	++count_;
 	// Add to end of list
 	add_node_back(n);
@@ -84,7 +82,7 @@ void linked_list<T>::add_back(const T& v) {
 
 
 template<typename T>
-void linked_list<T>::add_node_back(const node &n) {
+void linked_list<T>::add_node_back(node* const n) {
 	if(!end_.prev_) {
 		end_.prev_ = n;
 	} else {
@@ -92,7 +90,6 @@ void linked_list<T>::add_node_back(const node &n) {
 		end_.prev_ = n;
 	}
 }
-
 
 } // namespace
 
