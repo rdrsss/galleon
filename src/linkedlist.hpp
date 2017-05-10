@@ -9,9 +9,6 @@ namespace hepp {
 template<typename T>
 class linked_list {
 	struct node {
-		node() : next_(nullptr), prev_(nullptr) {}
-		node(const T& v) : node() { value_ = v; }
-
 		T value_;
 
 		node* next_;
@@ -51,7 +48,7 @@ private:
 template<typename T>
 void linked_list<T>::add_front(const T& v) {
 	// Create new node
-	const auto n = new node(v);
+	const auto n = new node { v, nullptr, nullptr };
 	++count_;
 	// Add to front of list
 	add_node_front(n);
@@ -92,5 +89,4 @@ void linked_list<T>::add_node_back(node* const n) {
 }
 
 } // namespace
-
 #endif
