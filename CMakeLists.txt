@@ -23,12 +23,13 @@ include_directories(
 	src
 	)
 
+message("lib sources : " ${lib_sources})
+
 # googletest
 add_subdirectory(
 	vendor/googletest
 	${BUILD_DIR}
 	)
-
 
 # create test executable
 add_executable(
