@@ -24,7 +24,7 @@ public:
 	linked_list(const linked_list& rhs) {}
 	linked_list(const linked_list&& rhs) {}
 
-	~linked_list() {}
+	~linked_list();
 
 	void test();
 
@@ -44,7 +44,25 @@ private:
 	int count_;
 };
 
-
+template<typename T>
+linked_list<T>::~linked_list() {
+	if(begin.next_) {
+		auto current = begin.next_;
+		for(;;) {
+			auto p = current;
+			if(current.next_){
+				current = current.next_;
+			}
+			if(p) {
+				delete p;
+				p = nullptr;
+			} else {
+				break
+			}
+		}
+	}
+}
+	
 template<typename T>
 void linked_list<T>::add_front(const T& v) {
 	// Create new node
