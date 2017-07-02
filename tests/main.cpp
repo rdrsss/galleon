@@ -6,7 +6,7 @@
 
 
 TEST(LinkedListAddFrontTest, AddFront) {
-	hepp::linked_list<int> ll;
+	gal::linked_list<int> ll;
 	ll.add_front(0);
 	ll.add_front(1);
 	ll.add_front(2);

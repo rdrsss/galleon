@@ -3,7 +3,7 @@
 #define LINKED_LIST_H_
 #pragma once
 
-namespace hepp {
+namespace gal {
 
 
 template<typename T>
@@ -46,18 +46,18 @@ private:
 
 template<typename T>
 linked_list<T>::~linked_list() {
-	if(begin.next_) {
-		auto current = begin.next_;
+	if(begin_.next_) {
+		auto current = begin_.next_;
 		for(;;) {
 			auto p = current;
-			if(current.next_){
-				current = current.next_;
+			if(current->next_){
+				current = current->next_;
 			}
 			if(p) {
 				delete p;
 				p = nullptr;
 			} else {
-				break
+				break;
 			}
 		}
 	}
