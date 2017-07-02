@@ -1,2 +1,11 @@
-# hepp
-Random assortment of c++ structs and containers. And benchmarks to scratch an itch.
+# Galleon
+* Assortment of c++ structs and containers. With added benchmarks.
+* Learning project. Perhaps I'll use it in other projects.
+
+# Containers
+* Linked List
+* Vector
+* Deque
+* Map
+
+# Algorithms
